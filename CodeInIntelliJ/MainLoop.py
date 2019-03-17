@@ -1,30 +1,34 @@
-import datetime
-from datetime import *
+import datetime as dT
+import time as rDT
+
 
 def update():
-    print("update")
     pass
 
 def render():
-    print("render")
     pass
 
-previous = datetime.now().microsecond
-lag = 0.0
-aSecond = 0
+previous = dT.datetime.now()
+lag = 0
+Frame60 = 0
+lagtotal = 0
+loops = 0
+TimeFrame = dT.datetime.now()
 while True:
-    current = datetime.now().microsecond
+    current = dT.datetime.now()
     elapsed = current - previous
     previous = current
-    lag = lag + elapsed
-    print(elapsed)
-    while lag >= (1/60)*datetime.second:
+    lag = lag + elapsed.microseconds
+    while lag >= 16667: #frameskip
         update()
-        lag - (1/60)*datetime.second
-
-    if aSecond == 60:
-        print("een seconde is voorbij bitches")
-        aSecond = 0
+        lag = lag - 16667
 
     render()
-    aSecond = aSecond + 1
+    Frame60 = Frame60 + 1
+
+    TimeDiff = dT.datetime.now() - TimeFrame
+    if TimeDiff.seconds >= 1:
+        TimeFrame = dT.datetime.now()
+        print(Frame60)
+        Frame60 = 0
+    rDT.sleep(1/60 - lag/1000000)

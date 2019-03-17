@@ -1,0 +1,50 @@
+Bobby Oldschool the karate king
+had infity knowledge about the martial arts
+but what now?
+he knew, share this knowledge with the world
+And so he started a school
+
+School curriculum:
+martial arts
+bullying
+maths
+myths
+langiunni
+cooking
+how popular
+artism
+cartography
+biology(theoretical)
+biology(phyisical)
+procrastinating
+crying
+
+brown
+red
+blue 
+green
+purple
+pink
+
+
+main menu:
+
+
+you school has: 0 students
+[ ...  ..  .. . ....    ]
+
+change plans
+	-school structure
+	-curriculum
+	-individual student management
+	-lessons
+hike
+	-walk to room:
+	-schoolyard
+think
+	-look at stats
+	-extra options
+general options
+save
+quit
+	

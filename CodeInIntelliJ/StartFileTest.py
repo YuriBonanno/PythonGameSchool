@@ -1,11 +1,14 @@
 import tkinter as tk
 import MainLoop as mL
+import WindowWithContents as wWC
 
 
 
-
-
+# word class met object variables de frames
 if __name__ == '__main__':
+    testWindow = wWC()
+
+
     root = tk.Tk()
     WIDTH = 840
     HEIGHT = 600
@@ -21,7 +24,8 @@ if __name__ == '__main__':
     frame3.configure(height=frame1["height"], width=frame1["width"])
     frame3.grid_propagate(0)
 
-    textBox = tk.Label(frame1, text="big dick is in town", fg="white", bg="black")
+    List = [frame1, frame2, frame3]
+    textBox = tk.Label(frame1, text="welkom", fg="white", bg="black")
 
     frame1.grid(column=0, row=0)
     frame2.grid(column=1, row=0)

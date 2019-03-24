@@ -1,30 +1,29 @@
 import datetime as dT
 import time as rDT
+import UpdateGameState as uGS
 
 class MainLoop:
 
-    def update(self):
+    def render(self, p, g):
         pass
 
-    def render(self):
-        pass
-
-    def __init__(self):
+    def __init__(self, package):
         previous = dT.datetime.now()
         lag = 0
         Frame60 = 0
-        lagtotal = 0
-        loops = 0
         TimeFrame = dT.datetime.now()
+        gameState = 0
         while True:
             current = dT.datetime.now()
             elapsed = current - previous
             previous = current
             lag = lag + elapsed.microseconds
             while lag >= 16667: #frameskip
-                self.update()
+                gameState = uGS.gameSequence(package, gameState)
+                package.rootWindow.update_idletasks()
+                package.rootWindow.update()
                 lag = lag - 16667
-            self.render()
+            self.render(package, gameState)
             Frame60 = Frame60 + 1
 
 
@@ -34,6 +33,3 @@ class MainLoop:
                 print(Frame60)
                 Frame60 = 0
             rDT.sleep(1/60 - lag/1000000)
-
-def main():
-    a = MainLoop()

@@ -1,0 +1,5 @@
+class GameStateClass:
+    started = False
+    while not started:
+
+        pass

@@ -20,10 +20,10 @@ class MainLoop:
             lag = lag + elapsed.microseconds
             while lag >= 16667: #frameskip
                 gameState = uGS.gameSequence(package, gameState)
-                package.rootWindow.update_idletasks()
-                package.rootWindow.update()
                 lag = lag - 16667
             self.render(package, gameState)
+            package.rootWindow.update_idletasks()
+            package.rootWindow.update()
             Frame60 = Frame60 + 1
 
 

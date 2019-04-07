@@ -27,7 +27,7 @@ class Student:
         bins = np.linspace(0.5, 10.5, 11)
         digitized = np.digitize(maxwellData, bins)
         for i in range(len(digitized)):
-            if digitized[i] <= 0:
+            if digitized[i] <= 1:
                 digitized[i] = 1
             if digitized[i] >= 10:
                 digitized[i] = 10
